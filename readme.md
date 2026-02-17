@@ -1,6 +1,6 @@
 # ModeratorBay
 
-ModeratorBay is an open-source project for moderating, automating, and simplifying work with content and users. The project is in development and is gradually gaining more features.
+```ModeratorBay is an open-source project for moderating, automating, and simplifying work with content and users. The project is in development and is gradually gaining more features.```
 
 ## 📋 How to contribute
 - Fork the repository
