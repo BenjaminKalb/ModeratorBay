@@ -1,0 +1,147 @@
+locale: "en_US"
+messages:
+  ban:
+    usage: "Usage: /ban <player> [reason]"
+    success: "Player %s has been banned. Reason: %s"
+    already_banned: "Player %s is already banned."
+    exempt: "Player %s is exempt from being banned."
+
+    player_notification: "You have been banned from the server. Reason: %s"
+    chat_notification: "%s has been banned from the server. Reason: %s"
+
+  ipban:
+    usage: "Usage: /ipban <player> [reason]"
+    success: "Player %s has been IP banned. Reason: %s"
+    already_banned: "Player %s is already IP banned."
+    exempt: "Player %s is exempt from being IP banned."
+
+    player_notification: "You have been IP banned from the server. Reason: %s"
+    chat_notification: "%s has been IP banned from the server. Reason: %s"
+
+  tempban:
+    usage: "Usage: /tempban <player> <duration> [reason]"
+    success: "Player %s has been temporarily banned for %s. Reason: %s"
+    max_duration: "The maximum temporary ban duration is %s."
+    already_banned: "Player %s is already banned."
+    exempt: "Player %s is exempt from being temporarily banned."
+
+    player_notification: "You have been temporarily banned from the server for %s. Reason: %s"
+    chat_notification: "%s has been temporarily banned from the server for %s. Reason: %s"
+
+  tempipban:
+    usage: "Usage: /tempipban <player> <duration> [reason]"
+    success: "Player %s has been temporarily IP banned for %s. Reason: %s"
+    max_duration: "The maximum temporary IP ban duration is %s."
+    already_banned: "Player %s is already IP banned."
+    exempt: "Player %s is exempt from being temporarily IP banned."
+
+    player_notification: "You have been temporarily IP banned from the server for %s. Reason: %s"
+    chat_notification: "%s has been temporarily IP banned from the server for %s. Reason: %s"
+
+  mute:
+    usage: "Usage: /mute <player> [reason]"
+    success: "Player %s has been muted. Reason: %s"
+    already_muted: "Player %s is already muted."
+    exempt: "Player %s is exempt from being muted."
+
+    player_notification: "You have been muted on the server. Reason: %s"
+    chat_notification: "%s has been muted on the server. Reason: %s"
+
+  tempmute: 
+    usage: "Usage: /tempmute <player> <duration> [reason]"
+    success: "Player %s has been temporarily muted for %s. Reason: %s"
+    max_duration: "The maximum temporary mute duration is %s."
+    already_muted: "Player %s is already muted."
+    exempt: "Player %s is exempt from being temporarily muted."
+
+    player_notification: "You have been temporarily muted on the server for %s. Reason: %s"
+    chat_notification: "%s has been temporarily muted on the server for %s. Reason: %s"
+
+  warn:
+    usage: "Usage: /warn <player> [reason]"
+    success: "Player %s has been warned. Reason: %s"
+    exempt: "Player %s is exempt from being warned."
+
+    player_notification: "You have received a warning on the server. Reason: %s"
+    chat_notification: "%s has received a warning on the server. Reason: %s"
+
+  tempwarn:
+    usage: "Usage: /tempwarn <player> <duration> [reason]"
+    success: "Player %s has received a temporary warning for %s. Reason: %s"
+    max_duration: "The maximum temporary warning duration is %s."
+    exempt: "Player %s is exempt from receiving a temporary warning."
+
+    player_notification: "You have received a temporary warning on the server for %s. Reason: %s"
+    chat_notification: "%s has received a temporary warning on the server for %s. Reason: %s"
+
+  kick:
+    usage: "Usage: /kick <player> [reason]"
+    success: "Player %s has been kicked. Reason: %s"
+    exempt: "Player %s is exempt from being kicked."
+
+    player_notification: "You have been kicked from the server. Reason: %s"
+    chat_notification: "%s has been kicked from the server. Reason: %s"
+
+  unban:
+    usage: "Usage: /unban <player>"
+    success: "Player %s has been unbanned."
+    not_banned: "Player %s is not banned."
+
+  unmute:
+    usage: "Usage: /unmute <player>"
+    success: "Player %s has been unmuted."
+    not_muted: "Player %s is not muted."
+
+  unwarn:
+    usage: "Usage: /unwarn <player>"
+    success: "Player %s has been unwarned."
+    not_warned: "Player %s is not warned."
+
+  banlist:
+    usage: "Usage: /banlist [page]"
+    no_bans: "There are no bans currently."
+    header: "Ban List - Page %s/%s"
+    entry: "%s. %s - Reason: %s - Expires: %s"
+
+  history:
+    usage: "Usage: /history <player>"
+    no_history: "Player %s has no history."
+    header: "History for %s"
+    entry: "%s. %s - Reason: %s - Date: %s"
+
+  warns:
+    usage: "Usage: /warns <player>"
+    no_warnings: "Player %s has no warnings."
+    header: "Warnings for %s"
+    entry: "%s. Reason: %s - Date: %s"
+
+  warns_own:
+    usage: "Usage: /warns"
+    no_warnings: "You have no warnings."
+    header: "Your Warnings"
+    entry: "%s. Reason: %s - Date: %s"
+
+  change_reason:
+    usage: "Usage: /changereason <id> <new reason>"
+    success: "Reason for punishment ID %s has been changed to: %s"
+    not_found: "Punishment with ID %s not found."
+
+  check:
+    usage: "Usage: /check <player>"
+    no_punishments: "Player %s has no punishments."
+    header: "&7Checking &e&o%NAME% &8(%CACHED%&8)"
+    UUID: "&cUUID &8» &7%UUID% &8(%CACHED%&8)"
+    IP: "&cIP &8» &7%IP% &8(%CACHED%&8)"
+    Geo: "&cCountry &8» &7%LOCATION%"
+    muted: "&cMuted &8» &7%MUTED%"
+    mute_reason: "&cMute Reason &8» &7%MUTE_REASON%"
+    ban: "&cBanned &8» &7%BANNED%"
+    ban_reason: "&cBan Reason &8» &7%BAN_REASON%"
+    warn: "&cWarnings &8» &7%WARNS%"
+    not_found: "Player %s not found."
+    cached: "cached"
+    not_cached: "not cached"
+  general:
+    prefix: "[Server] "
+    no_permission: "You do not have permission to perform this action."
+
