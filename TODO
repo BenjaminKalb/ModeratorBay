@@ -1,0 +1,86 @@
+# TODO - ModeratorBay
+
+## 🎯 Core Features
+- [ ] Implement player ban/kick commands
+- [ ] Implement mute/unmute system
+- [ ] Implement warning system for players
+- [ ] Add player chat logging
+- [ ] Add command logging and audit trail
+- [ ] Implement custom prefix system
+
+## 📋 Command System
+- [ ] Ban command (/ban <player> <reason>)
+- [ ] Kick command (/kick <player> <reason>)
+- [ ] Mute command (/mute <player> <duration>)
+- [ ] Warn command (/warn <player> <reason>)
+- [ ] Tempban command (/tempban <player> <duration>)
+- [ ] List active punishments command
+- [ ] Unban/Unmute/Unwarn commands
+
+## 🔔 Event Listeners
+- [ ] PlayerChatEvent listener (for chat filtering/logging)
+- [ ] PlayerCommandPreprocessEvent listener
+- [ ] PlayerJoinEvent listener (check for active punishments)
+- [ ] PlayerQuitEvent listener
+
+## 💾 Data Management
+- [ ] Implement database support (YAML config storage)
+- [ ] Add player punishments storage
+- [ ] Add player history tracking
+- [ ] Implement data export/backup functionality
+
+## 🌐 Localization
+- [ ] Complete German (de_DE) locales
+- [ ] Complete Russian (ru_RU) locales
+- [ ] Complete Ukrainian (ua_UA) locales
+- [ ] Add message configuration support
+- [ ] Add placeholder support in messages
+
+## ⚙️ Configuration
+- [ ] Add config.yml with plugin settings
+- [ ] Add punishment durations configuration
+- [ ] Add punishment reasons whitelist
+- [ ] Add auto-save interval configuration
+
+## 🧪 Testing & Quality
+- [ ] Unit tests for command validation
+- [ ] Unit tests for punishment system
+- [ ] Add error handling for all commands
+- [ ] Add input validation
+- [ ] Test compatibility with Paper/Spigot versions
+
+## 📖 Documentation
+- [ ] Update README with features
+- [ ] Add command usage documentation
+- [ ] Add permission documentation
+- [ ] Add configuration guide
+- [ ] Add installation instructions
+
+## 🛠️ Code Improvements
+- [ ] Refactor CommandManager for scalability
+- [ ] Add dependency injection pattern
+- [ ] Add logger utility class
+- [ ] Add permission checker utility
+- [ ] Add message formatter utility
+- [ ] Update Java version target (currently 8, consider 11+)
+- [ ] Add code comments for complex logic
+
+## 🔐 Security & Permissions
+- [ ] Add granular permission levels
+- [ ] Add admin-only commands
+- [ ] Add permission for each punishment type
+- [ ] Implement permission inheritance
+
+## 📈 Performance
+- [ ] Add caching for player data
+- [ ] Optimize command parsing
+- [ ] Add async database operations
+- [ ] Monitor memory usage
+
+## 🚀 Future Enhancements
+- [ ] Web dashboard for moderation
+- [ ] Discord integration
+- [ ] Message reporting system
+- [ ] Automatic spam detection
+- [ ] Advanced filtering options
+- [ ] API for external plugins
