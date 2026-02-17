@@ -30,9 +30,9 @@
 - [ ] Implement data export/backup functionality
 
 ## 🌐 Localization
-- [ ] Complete German (de_DE) locales
-- [ ] Complete Russian (ru_RU) locales
-- [ ] Complete Ukrainian (ua_UA) locales
+- [*] Complete German (de_DE) locales
+- [*] Complete Russian (ru_RU) locales
+- [*] Complete Ukrainian (ua_UA) locales
 - [ ] Add message configuration support
 - [ ] Add placeholder support in messages
 
