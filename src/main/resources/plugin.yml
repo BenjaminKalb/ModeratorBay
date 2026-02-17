@@ -1,0 +1,6 @@
+name: ModeratorBay
+version: '${version}'
+main: org.benjaminkalb.moderatorbay.ModeratorBay
+api-version: '1.13'
+prefix: MBay
+authors: [Benjamin Kalb]
