@@ -13,14 +13,12 @@ public abstract class AbstractCommand implements TabCompleter {
     protected String description;
     protected String permission;
     protected String[] aliases;
-    protected String[] args;
     
     public AbstractCommand(String name, String description, String permission, String[] aliases) {
         this.name = name;
         this.description = description;
         this.permission = permission;
         this.aliases = aliases;
-        this.args = new String[0];
     }
     
      // Main method to execute the command
@@ -66,13 +64,5 @@ public abstract class AbstractCommand implements TabCompleter {
     
     public String[] getAliases() {
         return aliases;
-    }
-    
-    public String[] getArgs() {
-        return args;
-    }
-    
-    public void setArgs(String[] args) {
-        this.args = args;
     }
 }

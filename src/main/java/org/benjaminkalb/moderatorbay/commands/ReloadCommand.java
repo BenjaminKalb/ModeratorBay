@@ -18,12 +18,6 @@ public class ReloadCommand extends AbstractCommand {
     
     @Override
     public boolean execute(CommandSender sender, Command command, String label, String[] args) {
-        // Check if sender has permission
-        if (!hasPermission(sender)) {
-            sender.sendMessage("§cYou don`t have permission to use this command!");
-            return true;
-        }
-        
         try {
             // coming soon: reload config and locale
             // configManager.reload();
