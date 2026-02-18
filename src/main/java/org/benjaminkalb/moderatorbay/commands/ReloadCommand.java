@@ -1,5 +1,6 @@
 package org.benjaminkalb.moderatorbay.commands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
@@ -10,11 +11,10 @@ public class ReloadCommand extends AbstractCommand {
     
     public ReloadCommand() {
         super(
-            "reload",
-            "Reload the plugin configuration",
-            "moderatorbay.reload",
-            new String[]{"rel", "reload"}
-        );
+        "reload", 
+        "Reloads the plugin configuration.", 
+        "moderatorbay.reload", 
+        new String[]{"rel", "r"});
     }
     
     @Override
@@ -24,10 +24,10 @@ public class ReloadCommand extends AbstractCommand {
             // configManager.reload();
             // localeManager.reload();
             
-            sender.sendMessage("§a✓ Configuration reloaded successfully!");
+            sender.sendMessage(ChatColor.GREEN + "Configuration reloaded successfully!");
             return true;
         } catch (Exception e) {
-            sender.sendMessage("§c✗ Error with reloading: " + e.getMessage());
+            sender.sendMessage(ChatColor.RED + "Error with reloading: " + e.getMessage());
             e.printStackTrace();
             return false;
         }

@@ -1,6 +1,13 @@
 package org.benjaminkalb.moderatorbay.managers;
 
 import org.benjaminkalb.moderatorbay.commands.AbstractCommand;
+import org.benjaminkalb.moderatorbay.commands.HelpCommand;
+import org.benjaminkalb.moderatorbay.commands.MainCommand;
+import org.benjaminkalb.moderatorbay.commands.MuteCommand;
+import org.benjaminkalb.moderatorbay.commands.ReloadCommand;
+import org.benjaminkalb.moderatorbay.commands.TempmuteCommand;
+import org.benjaminkalb.moderatorbay.commands.UnmuteCommand;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -13,6 +20,7 @@ public class CommandManager {
     private final JavaPlugin plugin;
     private final Map<String, AbstractCommand> commands;
     private final Map<String, Map<String, AbstractCommand>> categories;
+    private MainCommand mainCommand;
     
     public CommandManager(JavaPlugin plugin) {
         this.plugin = plugin;
@@ -22,9 +30,18 @@ public class CommandManager {
     
      // Initialize and register all commands
     public void init() {
-        plugin.getLogger().log(Level.INFO, "Initializing command manager...");
-        // registerCommand(new HelpCommand());
-        // registerCommand(new ReloadCommand());
+        plugin.getLogger().log(Level.INFO, ChatColor.GREEN + "Initializing command manager...");
+        
+        // Create and register the main command
+        mainCommand = new MainCommand();
+        mainCommand.registerSubcommand(new HelpCommand());
+        mainCommand.registerSubcommand(new ReloadCommand());
+        mainCommand.registerSubcommand(new MuteCommand());
+        mainCommand.registerSubcommand(new TempmuteCommand(plugin));
+        mainCommand.registerSubcommand(new UnmuteCommand());
+        
+        // Register the main command
+        registerCommand(mainCommand);
     }
     
      // Register a command in the default category
@@ -36,7 +53,7 @@ public class CommandManager {
     public void registerCommand(AbstractCommand command, String category) {
         // Validate command
         if (command == null) {
-            plugin.getLogger().log(Level.WARNING, "Attempted to register null command!");
+            plugin.getLogger().log(Level.WARNING, ChatColor.RED + "Attempted to register null command!");
             return;
         }
         
@@ -58,7 +75,7 @@ public class CommandManager {
                   .put(commandName, command);
         
         plugin.getLogger().log(Level.INFO, 
-            "✓ Registered command: '" + command.getName() + 
+            ChatColor.GREEN + "Registered command: '" + command.getName() + 
             "' [Category: " + category + "] with permission: '" + command.getPermission() + "'");
     }
     
@@ -67,14 +84,14 @@ public class CommandManager {
         AbstractCommand cmd = getCommand(label);
         
         if (cmd == null) {
-            sender.sendMessage("§c✗ Command not found: /" + label);
+            sender.sendMessage(ChatColor.RED + "Command not found: /" + label);
             plugin.getLogger().log(Level.WARNING, 
                 "Command '" + label + "' executed by " + sender.getName() + " - NOT FOUND");
             return false;
         }
         
         if (!cmd.hasPermission(sender)) {
-            sender.sendMessage("§c✗ You don't have permission to use this command!");
+            sender.sendMessage(ChatColor.RED + "You don't have permission to use this command!");
             plugin.getLogger().log(Level.WARNING, 
                 "Command '" + label + "' executed by " + sender.getName() + " - PERMISSION DENIED");
             return true;
@@ -82,12 +99,12 @@ public class CommandManager {
         
         try {
             plugin.getLogger().log(Level.INFO, 
-                "Executing command: '" + label + "' by " + sender.getName());
+                ChatColor.GREEN + "Executing command: '" + label + "' by " + sender.getName());
             return cmd.execute(sender, command, label, args);
         } catch (Exception e) {
-            sender.sendMessage("§c✗ An error occurred while executing the command!");
+            sender.sendMessage(ChatColor.RED + "An error occurred while executing the command!");
             plugin.getLogger().log(Level.SEVERE, 
-                "Error executing command '" + label + "'", e);
+                ChatColor.RED + "Error executing command '" + label + "'", e);
             return false;
         }
     }

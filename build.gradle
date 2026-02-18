@@ -18,7 +18,8 @@ repositories {
 }
 
 dependencies {
-compileOnly "com.destroystokyo.paper:paper-api:1.13-R0.1-SNAPSHOT"
+    compileOnly "com.destroystokyo.paper:paper-api:1.13-R0.1-SNAPSHOT"
+    implementation "org.xerial:sqlite-jdbc:3.44.0.0"
 }
 
 def targetJavaVersion = 8

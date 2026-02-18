@@ -1,0 +1,31 @@
+# ModeratorBay Database Configuration
+
+database:
+  # Database type: MySQL, SQLite
+  type: "SQLite"
+  
+  # SQLite configuration
+  sqlite:
+    filename: "moderatorbay.db"
+  
+  # MySQL configuration
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "moderatorbay"
+    username: "root"
+    password: "password"
+    use-ssl: false
+    max-pool-size: 10
+  
+  # Connection pool settings
+  connection-pool:
+    max-connections: 10
+    min-idle: 5
+    max-lifetime: 1800000
+    idle-timeout: 600000
+
+# Enable/disable data storage
+storage:
+  enabled: true
+  auto-save-interval: 300  # seconds

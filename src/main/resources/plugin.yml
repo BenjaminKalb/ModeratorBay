@@ -5,22 +5,28 @@ api-version: '1.13'
 prefix: MBay
 authors: [Benjamin Kalb]
 commands:
-  reload:
-    description: Reload the plugin configuration
-    usage: /reload
-    aliases: [rel]
-    permission: moderatorbay.reload
-  
-  help:
-    description: Show help information about the plugin
-    usage: /help
-    permission: moderatorbay.help
+  mbay:
+    description: ModeratorBay main command
+    usage: /mbay <command> [args]
+    aliases: [moderatorbay]
+    permission: moderatorbay.use
 
 permissions:
+  moderatorbay.use:
+    description: Permission to use ModeratorBay commands
+    default: true
   moderatorbay.reload:
     description: Permission to reload the plugin configuration
     default: op
-  
   moderatorbay.help:
     description: Permission to use the help command
     default: true
+  moderatorbay.mute:
+    description: Permission to mute players
+    default: op
+  moderatorbay.tempmute:
+    description: Permission to temporarily mute players
+    default: op
+  moderatorbay.unmute:
+    description: Permission to unmute players
+    default: op
